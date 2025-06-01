@@ -16,6 +16,10 @@ app.get('/ping', (req, res) => {
 });
 
 app.use(bodyParser.json());
+app.use(cors({
+    origin:"https://exp-tracker-frontend.onrender.com",
+    credentials:true,
+}));
 app.use(cors());
 app.use('/auth', AuthRouter);
 app.use('/products', ProductRouter);
